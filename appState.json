@@ -1,0 +1,119 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "a430fb1e-7616-4594-bc82-5be84ef62578": {
+        "id": "a430fb1e-7616-4594-bc82-5be84ef62578",
+        "parent": null,
+        "name": "0104_s3project.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "0104_s3project.js",
+        "cursor": {
+          "lineNumber": 33,
+          "column": 25
+        },
+        "config": {
+          "runtime": "nodejs10.x",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [],
+        "testCases": {
+          "5c018acd-1c25-4589-82ad-8b42e53d7c36": {
+            "id": "5c018acd-1c25-4589-82ad-8b42e53d7c36",
+            "name": "Test event",
+            "functionId": "a430fb1e-7616-4594-bc82-5be84ef62578",
+            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
+            "eventTemplate": "hello-world"
+          }
+        },
+        "customSecurityPolicy": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Resource": "arn:aws:s3:::hiru.test01/*",
+              "Action": [
+                "s3:ListBucket"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "openFiles": [
+      "a430fb1e-7616-4594-bc82-5be84ef62578"
+    ],
+    "currentFileId": "a430fb1e-7616-4594-bc82-5be84ef62578",
+    "resources": {
+      "s3as2TestLahiru": {
+        "name": "s3as2TestLahiru",
+        "type": "S3",
+        "config": {
+          "mode": 1,
+          "bucket": {
+            "region": "us-east-1",
+            "name": "as2-test-lahiru"
+          }
+        }
+      },
+      "s3hirutest01": {
+        "name": "s3hirutest01",
+        "type": "S3",
+        "config": {
+          "mode": 1,
+          "bucket": {
+            "region": "us-east-1",
+            "name": "hiru.test01"
+          }
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "nodejs",
+          "version": "2.644.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "0104_s3project",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "language": "nodejs",
+    "platformRegions": {},
+    "lastSave": 1585720727641
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "0104_s3project",
+      "url": "https://github.com/HirudineeADRT/0104_s3project"
+    }
+  }
+}

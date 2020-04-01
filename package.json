@@ -1,0 +1,8 @@
+{
+  "name": "0104_s3project",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "aws-sdk": "2.644.0"
+  }
+}
