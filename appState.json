@@ -32,7 +32,7 @@
             "id": "5c018acd-1c25-4589-82ad-8b42e53d7c36",
             "name": "Test event",
             "functionId": "a430fb1e-7616-4594-bc82-5be84ef62578",
-            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
             "eventTemplate": "hello-world"
           }
         },
@@ -48,12 +48,49 @@
             }
           ]
         }
+      },
+      "0733450d-2e3b-4f16-ad2d-9c3b6fa1e0e4": {
+        "id": "0733450d-2e3b-4f16-ad2d-9c3b6fa1e0e4",
+        "parent": null,
+        "name": "0104_SQSproject.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "0104_SQSproject.js",
+        "cursor": {
+          "lineNumber": 44,
+          "column": 25
+        },
+        "config": {
+          "runtime": "nodejs10.x",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "apigusEast1hiru1312s3issuecheckany",
+            "config": {}
+          }
+        ],
+        "testCases": {
+          "0ab6f27f-adac-4ffc-8e84-9b8c5c94a4b2": {
+            "id": "0ab6f27f-adac-4ffc-8e84-9b8c5c94a4b2",
+            "name": "Test event",
+            "functionId": "0733450d-2e3b-4f16-ad2d-9c3b6fa1e0e4",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
+          }
+        }
       }
     },
     "openFiles": [
-      "a430fb1e-7616-4594-bc82-5be84ef62578"
+      "a430fb1e-7616-4594-bc82-5be84ef62578",
+      "0733450d-2e3b-4f16-ad2d-9c3b6fa1e0e4"
     ],
-    "currentFileId": "a430fb1e-7616-4594-bc82-5be84ef62578",
+    "currentFileId": "0733450d-2e3b-4f16-ad2d-9c3b6fa1e0e4",
     "resources": {
       "s3as2TestLahiru": {
         "name": "s3as2TestLahiru",
@@ -115,6 +152,66 @@
           "stageDeploymentId": "ab2m7z",
           "mode": 1
         }
+      },
+      "sqshiruTest": {
+        "name": "sqshiruTest",
+        "type": "SQS",
+        "config": {
+          "mode": 1,
+          "existing": true,
+          "name": "hiru-test",
+          "url": "https://sqs.us-east-1.amazonaws.com/318300609668/hiru-test",
+          "selectedRegion": "us-east-1",
+          "deliveryDelay": "0",
+          "deliveryDelayUnit": "seconds",
+          "queueType": "standardQueue",
+          "defaultVisibilityTimeout": "30",
+          "defaultVisibilityTimeoutUnit": "seconds",
+          "messageRetentionPeriod": "345600",
+          "messageRetentionPeriodUnit": "seconds",
+          "maximumMessageSize": 256,
+          "receiveMessageWaitTime": "0",
+          "queueARN": "arn:aws:sqs:us-east-1:318300609668:hiru-test"
+        }
+      },
+      "apigusEast1hiru1312s3issuecheckany": {
+        "name": "apigusEast1hiru1312s3issuecheckany",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "hiru1312",
+          "apiId": "9jlzhlqmxj",
+          "endpointType": "REGIONAL",
+          "rootResourceId": "6lfukhtixf",
+          "existingResources": {
+            "/test": "045wnn",
+            "/": "6lfukhtixf",
+            "/s3issuecheck": "89aekf",
+            "/0228/recognition": "9iqavy",
+            "/check": "fl6i90",
+            "/24hours": "hb05w5",
+            "/check/s3": "j4e0ex",
+            "/0228": "k7ebnd",
+            "/test/hiru": "m0kbr3",
+            "/newprod": "rgjln9",
+            "/sample": "tc5zpx",
+            "/smoketest": "uu6qav",
+            "/kklk": "vf4n24",
+            "/sample/hiru": "xwhexr"
+          },
+          "resourceMode": 1,
+          "resourcePath": "/s3issuecheck",
+          "resourceName": "s3issuecheck",
+          "resourceId": "89aekf",
+          "restMethod": "ANY",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "Test",
+          "stageDeploymentId": "3o4jph",
+          "mode": 1
+        }
       }
     },
     "customTemplate": {
@@ -151,7 +248,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585721268406
+    "lastSave": 1585722047277
   },
   "VCS_STATE": {
     "provider": "GitHub",
