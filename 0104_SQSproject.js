@@ -5,8 +5,8 @@ exports.handler = async (event) => {
 
     try {
         let data = await sqs.sendMessage({
-            QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/hiru-test`,
-            MessageBody: "test sample message",
+            QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/K`,
+            MessageBody: "test sample message test",
             DelaySeconds: 0,
             MessageAttributes: {
                 '1': {
@@ -32,18 +32,18 @@ exports.handler = async (event) => {
             AttributeNames: ['All']
         }).promise();
         console.log(data);
-    handle = data.Messages[0].ReceiptHandle;
-    console.log(handle);
-    try {
-        let data = await sqs.deleteMessage({
-            QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/hiru-test`,
-            ReceiptHandle: handle
-        }).promise();
-        console.log(data);
-    } catch (err) {
-        console.log(err)
-        // error handling goes here
-    };
+        handle = data.Messages[0].ReceiptHandle;
+        console.log(handle);
+        try {
+            let data = await sqs.deleteMessage({
+                QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/hiru-test`,
+                ReceiptHandle: handle
+            }).promise();
+            console.log(data);
+        } catch (err) {
+            console.log(err)
+            // error handling goes here
+        };
 
     } catch (err) {
         console.log(err);

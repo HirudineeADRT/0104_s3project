@@ -59,8 +59,8 @@
         "isRemovable": true,
         "filePath": "0104_SQSproject.js",
         "cursor": {
-          "lineNumber": 56,
-          "column": 52
+          "lineNumber": 9,
+          "column": 51
         },
         "config": {
           "runtime": "nodejs10.x",
@@ -250,6 +250,27 @@
           "stageDeploymentId": "3mqt99",
           "mode": 1
         }
+      },
+      "sqsKTestSQS": {
+        "name": "sqsKTestSQS",
+        "type": "SQS",
+        "config": {
+          "mode": 1,
+          "existing": true,
+          "name": "KTestSQS",
+          "url": "https://sqs.us-east-1.amazonaws.com/318300609668/KTestSQS",
+          "selectedRegion": "us-east-1",
+          "deliveryDelay": "0",
+          "deliveryDelayUnit": "seconds",
+          "queueType": "standardQueue",
+          "defaultVisibilityTimeout": "30",
+          "defaultVisibilityTimeoutUnit": "seconds",
+          "messageRetentionPeriod": "345600",
+          "messageRetentionPeriodUnit": "seconds",
+          "maximumMessageSize": 256,
+          "receiveMessageWaitTime": "0",
+          "queueARN": "arn:aws:sqs:us-east-1:318300609668:KTestSQS"
+        }
       }
     },
     "customTemplate": {
@@ -286,7 +307,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585722436092
+    "lastSave": 1585722733978
   },
   "VCS_STATE": {
     "provider": "GitHub",
