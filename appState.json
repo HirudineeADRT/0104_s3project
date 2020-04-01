@@ -59,8 +59,8 @@
         "isRemovable": true,
         "filePath": "0104_SQSproject.js",
         "cursor": {
-          "lineNumber": 44,
-          "column": 25
+          "lineNumber": 56,
+          "column": 52
         },
         "config": {
           "runtime": "nodejs10.x",
@@ -71,7 +71,7 @@
         },
         "triggers": [
           {
-            "resourceName": "apigusEast1hiru1312s3issuecheckany",
+            "resourceName": "apigusEast1hiru1312sqsqueueany",
             "config": {}
           }
         ],
@@ -212,6 +212,44 @@
           "stageDeploymentId": "3o4jph",
           "mode": 1
         }
+      },
+      "apigusEast1hiru1312sqsqueueany": {
+        "name": "apigusEast1hiru1312sqsqueueany",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "hiru1312",
+          "apiId": "9jlzhlqmxj",
+          "endpointType": "REGIONAL",
+          "rootResourceId": "6lfukhtixf",
+          "existingResources": {
+            "/test": "045wnn",
+            "/": "6lfukhtixf",
+            "/s3issuecheck": "89aekf",
+            "/0228/recognition": "9iqavy",
+            "/check": "fl6i90",
+            "/24hours": "hb05w5",
+            "/check/s3": "j4e0ex",
+            "/0228": "k7ebnd",
+            "/test/hiru": "m0kbr3",
+            "/newprod": "rgjln9",
+            "/sample": "tc5zpx",
+            "/smoketest": "uu6qav",
+            "/kklk": "vf4n24",
+            "/sample/hiru": "xwhexr"
+          },
+          "resourceMode": 0,
+          "resourceName": "sqsqueue",
+          "resourcePath": "/sqsqueue",
+          "restMethod": "ANY",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 1,
+          "stageName": "Test",
+          "stageDeploymentId": "3mqt99",
+          "mode": 1
+        }
       }
     },
     "customTemplate": {
@@ -248,7 +286,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585722047277
+    "lastSave": 1585722436092
   },
   "VCS_STATE": {
     "provider": "GitHub",
