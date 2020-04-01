@@ -11,15 +11,17 @@
         "isRemovable": true,
         "filePath": "0104_s3project.js",
         "cursor": {
-          "lineNumber": 72,
-          "column": 20
+          "lineNumber": 1,
+          "column": 1
         },
         "config": {
           "runtime": "nodejs10.x",
           "handler": "handler",
           "timeout": 60,
-          "memory": 128,
-          "layers": []
+          "memory": 384,
+          "layers": [],
+          "name": "changethekambda",
+          "description": "this is the description"
         },
         "triggers": [
           {
@@ -59,8 +61,8 @@
         "isRemovable": true,
         "filePath": "0104_SQSproject.js",
         "cursor": {
-          "lineNumber": 9,
-          "column": 51
+          "lineNumber": 1,
+          "column": 1
         },
         "config": {
           "runtime": "nodejs10.x",
@@ -90,7 +92,7 @@
       "a430fb1e-7616-4594-bc82-5be84ef62578",
       "0733450d-2e3b-4f16-ad2d-9c3b6fa1e0e4"
     ],
-    "currentFileId": "0733450d-2e3b-4f16-ad2d-9c3b6fa1e0e4",
+    "currentFileId": "a430fb1e-7616-4594-bc82-5be84ef62578",
     "resources": {
       "s3as2TestLahiru": {
         "name": "s3as2TestLahiru",
@@ -271,6 +273,53 @@
           "receiveMessageWaitTime": "0",
           "queueARN": "arn:aws:sqs:us-east-1:318300609668:KTestSQS"
         }
+      },
+      "sqsK": {
+        "name": "sqsK",
+        "type": "SQS",
+        "config": {
+          "mode": 1,
+          "existing": true,
+          "name": "K",
+          "url": "https://sqs.us-east-1.amazonaws.com/318300609668/K",
+          "selectedRegion": "us-east-1",
+          "deliveryDelay": "0",
+          "deliveryDelayUnit": "seconds",
+          "queueType": "standardQueue",
+          "defaultVisibilityTimeout": "30",
+          "defaultVisibilityTimeoutUnit": "seconds",
+          "messageRetentionPeriod": "345600",
+          "messageRetentionPeriodUnit": "seconds",
+          "maximumMessageSize": 256,
+          "receiveMessageWaitTime": "0",
+          "queueARN": "arn:aws:sqs:us-east-1:318300609668:K"
+        }
+      },
+      "sqshirufifo": {
+        "name": "sqshirufifo",
+        "type": "SQS",
+        "config": {
+          "mode": 0,
+          "existing": false,
+          "name": "hiru.fifo",
+          "url": "https://sqs.us-east-1.amazonaws.com/318300609668/hiru.fifo",
+          "selectedRegion": "us-east-1",
+          "deliveryDelay": 0,
+          "deliveryDelayUnit": "seconds",
+          "useRedrivePolicy": false,
+          "useSSE": false,
+          "kmsCustomerMasterKey": "default",
+          "accountId": "318300609668",
+          "dataKeyReusePeriod": 5,
+          "queueType": "fifoQueue",
+          "defaultVisibilityTimeout": "120",
+          "defaultVisibilityTimeoutUnit": "seconds",
+          "messageRetentionPeriod": 4,
+          "messageRetentionPeriodUnit": "days",
+          "maximumMessageSize": 256,
+          "receiveMessageWaitTime": 0,
+          "deadLetterQueueName": ""
+        }
       }
     },
     "customTemplate": {
@@ -307,7 +356,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585722733978
+    "lastSave": 1585729477483
   },
   "VCS_STATE": {
     "provider": "GitHub",

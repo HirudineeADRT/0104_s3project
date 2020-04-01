@@ -5,7 +5,7 @@ exports.handler = async (event) => {
 
     try {
         let data = await sqs.sendMessage({
-            QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/K`,
+            QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/indunil-message-queue`,
             MessageBody: "test sample message test",
             DelaySeconds: 0,
             MessageAttributes: {
@@ -25,7 +25,7 @@ exports.handler = async (event) => {
 
     try {
         let data = await sqs.receiveMessage({
-            QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/hiru-test`,
+            QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/indunil-message-queue`,
             MaxNumberOfMessages: 1,
             VisibilityTimeout: 30,
             WaitTimeSeconds: 0,
@@ -36,8 +36,8 @@ exports.handler = async (event) => {
         console.log(handle);
         try {
             let data = await sqs.deleteMessage({
-                QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/hiru-test`,
-                ReceiptHandle: handle
+                QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/indunil-message-queue`,
+                ReceiptHandle: handle123
             }).promise();
             console.log(data);
         } catch (err) {
