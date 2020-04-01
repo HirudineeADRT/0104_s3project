@@ -30,13 +30,50 @@ exports.handler = async (event) => {
     try {
         let data = await s3.getObject({
             Bucket: "hiru.test01",
-            Key: "sample"
+            Key: "sample.txt"
         }).promise();
         console.log(data);
     } catch (err) {
         console.log(err);
         // error handling goes here
     };
+
+    try {
+        let data = await s3.copyObject({
+            Bucket: "as2-test-lahiru",
+            Key: "sample.txt",
+            CopySource: "/hiru.test01/sample.txt"
+        }).promise();
+
+        console.log(data);
+
+    } catch (err) {
+        console.log(err);
+        // error handling goes here
+    };
+
+    try {
+        let data = await s3.deleteObject({
+            Bucket: "hiru.test01",
+            Key: "sample.txt"
+        }).promise();
+        console.log("success");
+        console.log(data);
+    } catch (err) {
+        console.log(err);
+        // error handling goes here
+    };
+
+    try {
+        let data = await s3.getBucketLocation({
+            Bucket: "hiru.test01"
+        }).promise();
+        console.log(data);
+    } catch (err) {
+        console.log(err);
+        // error handling goes here
+    };
+
 
     return { "message": "Successfully executed" };
 };
